@@ -1,0 +1,23 @@
+version: '3'
+
+services:
+
+  nginx:
+    build: ./nginx
+    ports:
+      - 8888:80
+    volumes:
+      - nginx:/var/www/html
+
+  php:
+    build: ./php
+    volumes:
+      - nginx:/var/www/html
+
+  varnish:
+    build: ./varnish
+    ports:
+      - 80:80
+
+volumes:
+  nginx:
