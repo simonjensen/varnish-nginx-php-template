@@ -1,0 +1,1 @@
+# varnish-nginx-php-template
